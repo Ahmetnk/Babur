@@ -1,5 +1,10 @@
 from faster_whisper import WhisperModel
 
+model = WhisperModel(
+        "medium",
+        device="cpu",
+        compute_type="int8"
+    )
 
 def transcribe_audio(
     filename: str = "data/input.wav",
@@ -9,12 +14,6 @@ def transcribe_audio(
     """
     Converts a WAV audio file into text using Faster-Whisper.
     """
-
-    model = WhisperModel(
-        model_size,
-        device="cpu",
-        compute_type="int8"
-    )
 
     segments, info = model.transcribe(
         filename,
