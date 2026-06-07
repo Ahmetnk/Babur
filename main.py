@@ -2,6 +2,7 @@ from audio.recorder import record_audio
 from audio.stt import transcribe_audio
 
 
+
 def main():
     audio_file = record_audio(duration=5)
 
