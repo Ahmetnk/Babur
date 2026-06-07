@@ -22,6 +22,10 @@ def open_camera(camera_index: int = 0):
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
 
+        if cv2.waitKey(1) & 0xFF == ord("s"):
+            cv2.imwrite("data/camera_snapshot.jpg", frame)
+            print("Snapshot saved.")
+
     cap.release()
     cv2.destroyAllWindows()
 
